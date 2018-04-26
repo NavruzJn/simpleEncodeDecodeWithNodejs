@@ -79,15 +79,19 @@ function findNextMessage (inbox, lastHash) {
   let found;
   for (let i = 0; i < inbox.messages.length; i++) {
     if (inbox.messages[i].lastHash === lastHash) {
+      outPut('Found lastHash: ' + lastHash);
       found = i;
       break
     }
   }
-
-  console.log(inbox.messages[found].hash);
-  // read and decode the message
-  return 'from: ' + decode(inbox.messages[found].from) + '\n---\n' +
-    decode(fs.readFile(path.join(inbox.dir, inbox.messages[found].hash)))
+    // read and decode the message and send to output
+  fs.readFile(path.join(inbox.dir, inbox.messages[found].hash), function (req, res) {
+      return outPut('from: ' + decode(inbox.messages[found].from) + '\n---\n' + 'message: ' + decode(res.toString()));
+  });
 }
 
-module.exports ={loadDb,encodeName, findInbox, findNextMessage };
+function outPut(str) {
+    console.log(str);
+}
+
+module.exports ={ loadDb,encodeName, findInbox, findNextMessage };

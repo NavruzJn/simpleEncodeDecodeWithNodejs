@@ -1,0 +1,31 @@
+{
+  "name": "encodeanddecode",
+  "version": "1.0.0",
+  "description": "Simple encode and decode functions",
+  "main": "index.js",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Navruz Jandullaev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NavruzJn/simpleEncodeDecodeWithNodejs.git"
+  },
+  "keywords": [
+    "Node",
+    "base64",
+    "encode",
+    "decode"
+  ],
+  "bugs": {
+    "url": "https://github.com/NavruzJn/simpleEncodeDecodeWithNodejs/issues"
+  },
+  "homepage": "https://github.com/NavruzJn/simpleEncodeDecodeWithNodejs#readme"
+}
